@@ -8,11 +8,11 @@
         <div class="page-head bg-grey-100 padding-top-15 no-padding-bottom">
             @include('flash::message')
             <h1 class="page-title no-line-height">Enquiries
-                @permission(['manage-gymie','manage-enquiries','add-enquiry'])
+                @permission(['manage-gymware','manage-enquiries','add-enquiry'])
                 <a href="{{ action('EnquiriesController@create') }}" class="page-head-btn btn-sm btn-primary active" role="button">Add New</a>
                 <small>Details of all gym enquiries</small>
             </h1>
-            @permission(['manage-gymie','pagehead-stats'])
+            @permission(['manage-gymware','pagehead-stats'])
             <h1 class="font-size-30 text-right color-blue-grey-600 animated fadeInDown total-count pull-right"><span data-toggle="counter" data-start="0"
                                                                                                                      data-from="0" data-to="{{ $count }}"
                                                                                                                      data-speed="600"
@@ -38,7 +38,7 @@
                                         <div class="col-sm-3">
                                             {!! Form::label('enquiry-daterangepicker','Date range') !!}
                                             <div id="enquiry-daterangepicker"
-                                                 class="gymie-daterangepicker btn bg-grey-50 daterange-padding no-border color-grey-600 hidden-xs no-shadow">
+                                                 class="gymware-daterangepicker btn bg-grey-50 daterange-padding no-border color-grey-600 hidden-xs no-shadow">
                                                 <i class="ion-calendar margin-right-10"></i>
                                                 <span>{{$drp_placeholder}}</span>
                                                 <i class="ion-ios-arrow-down margin-left-5"></i>
@@ -109,7 +109,7 @@
                                                         <span class="sr-only">Toggle Dropdown</span>
                                                     </button>
                                                     <ul class="dropdown-menu" role="menu">
-                                                        @permission(['manage-gymie','manage-enquiries','view-enquiry'])
+                                                        @permission(['manage-gymware','manage-enquiries','view-enquiry'])
                                                         <li>
                                                             <a href="{{ action('EnquiriesController@show',['id' => $enquiry->id]) }}">
                                                                 View details
@@ -117,7 +117,7 @@
                                                         </li>
                                                         @endpermission
 
-                                                        @permission(['manage-gymie','manage-enquiries','edit-enquiry'])
+                                                        @permission(['manage-gymware','manage-enquiries','edit-enquiry'])
                                                         <li>
                                                             <a href="{{ action('EnquiriesController@edit',['id' => $enquiry->id]) }}">
                                                                 Edit details
@@ -125,7 +125,7 @@
                                                         </li>
                                                         @endpermission
 
-                                                        @permission(['manage-gymie','manage-enquiries','transfer-enquiry'])
+                                                        @permission(['manage-gymware','manage-enquiries','transfer-enquiry'])
                                                         @if($enquiry->status == 1)
                                                             <li>
                                                                 <a href="{{ action('MembersController@transfer',['id' => $enquiry->id]) }}">Transfer to
@@ -134,7 +134,7 @@
                                                         @endif
                                                         @endpermission
 
-                                                        @permission(['manage-gymie','manage-enquiries','view-enquiry'])
+                                                        @permission(['manage-gymware','manage-enquiries','view-enquiry'])
                                                         @if($enquiry->status == 1)
                                                             <li>
                                                                 <a href="#" class="mark-enquiry-as"
@@ -158,13 +158,13 @@
 
                                 <div class="row"><!-- Table bottom row -->
                                     <div class="col-xs-6">
-                                        <div class="gymie_paging_info">
+                                        <div class="gymware_paging_info">
                                             Showing page {{ $enquiries->currentPage() }} of {{ $enquiries->lastPage() }}
                                         </div>
                                     </div>
 
                                     <div class="col-xs-6">
-                                        <div class="gymie_paging pull-right">
+                                        <div class="gymware_paging pull-right">
                                             {!! str_replace('/?', '?', $enquiries->appends(Input::Only('search'))->render()) !!}
                                         </div>
                                     </div>
@@ -184,7 +184,7 @@
 @section('footer_script_init')
     <script type="text/javascript">
         $(document).ready(function () {
-            gymie.markEnquiryAs();
+            gymware.markEnquiryAs();
         });
     </script>
 @stop

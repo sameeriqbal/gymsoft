@@ -89,7 +89,7 @@ class MembersController extends Controller
         // For Tax calculation
         JavaScript::put([
             'taxes' => \Utilities::getSetting('taxes'),
-            'gymieToday' => Carbon::today()->format('Y-m-d'),
+            'gymwareToday' => Carbon::today()->format('Y-m-d'),
             'servicesCount' => Service::count(),
         ]);
 
@@ -419,7 +419,7 @@ class MembersController extends Controller
         // For Tax calculation
         JavaScript::put([
             'taxes' => \Utilities::getSetting('taxes'),
-            'gymieToday' => Carbon::today()->format('Y-m-d'),
+            'gymwareToday' => Carbon::today()->format('Y-m-d'),
             'servicesCount' => Service::count(),
         ]);
 

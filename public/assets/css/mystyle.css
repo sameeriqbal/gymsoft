@@ -37,11 +37,11 @@ body{
 }
 
 /* Pagination */
-.gymie_paging_info{
+.gymware_paging_info{
     padding-top: 8px;
 }
 
-.gymie_paging ul.pagination {
+.gymware_paging ul.pagination {
     margin: 2px 0;
     white-space: nowrap;
 }

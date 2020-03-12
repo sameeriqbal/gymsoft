@@ -16,7 +16,7 @@
                             <div class="panel-head font-size-20">Enquiry details</div>
                             <div class="pull-right no-margin">
                                 @if($enquiry->status == 1)
-                                    @permission(['manage-gymie','manage-enquiries','edit-enquiry'])
+                                    @permission(['manage-gymware','manage-enquiries','edit-enquiry'])
                                     <a href="#" class="mark-enquiry-as btn btn-sm btn-primary active pull-right margin-right-5"
                                        data-goto-url="{{ url('enquiries/'.$enquiry->id.'/markMember') }}" data-record-id="{{$enquiry->id}}"><i
                                                 class="fa fa-user"></i> Mark as member</a>
@@ -26,7 +26,7 @@
                                     @endpermission
                                 @endif
 
-                                @permission(['manage-gymie','manage-enquiries','edit-enquiry'])
+                                @permission(['manage-gymware','manage-enquiries','edit-enquiry'])
                                 <a class="btn btn-sm btn-primary pull-right margin-right-5"
                                    href="{{ action('EnquiriesController@edit',['id' => $enquiry->id]) }}"><span>Edit</span></a>
                                 @endpermission
@@ -212,7 +212,7 @@
                     <div class="panel no-border">
                         <div class="panel-title bg-white no-border">
                             <div class="panel-head"><i class="fa fa-bookmark-o"></i> <span> Follow Up Timeline</span></div>
-                            @permission(['manage-gymie','manage-enquiries','add-enquiry-followup'])
+                            @permission(['manage-gymware','manage-enquiries','add-enquiry-followup'])
                             <button class="btn btn-primary btn-sm pull-right" data-toggle="modal" data-target="#createFollowupModal"
                                     data-id="createFollowupModal">
                                 Add Followup
@@ -235,7 +235,7 @@
                                                 <div class="timeline-label">
                                                     <p>Via {{ Utilities::getFollowupBy($followup->followup_by) }}
                                                         @if($followup->status == 0)
-                                                            @permission(['manage-gymie','manage-enquiries','edit-enquiry-followup'])
+                                                            @permission(['manage-gymware','manage-enquiries','edit-enquiry-followup'])
                                                             <button class="btn btn-info btn-sm pull-right" data-toggle="modal"
                                                                     data-target="#editFollowupModal-{{$followup->id}}" data-id="{{$followup->id}}">
                                                                 Edit
@@ -383,7 +383,7 @@
 @section('footer_script_init')
     <script type="text/javascript">
         $(document).ready(function () {
-            gymie.markEnquiryAs();
+            gymware.markEnquiryAs();
         });
     </script>
 @stop

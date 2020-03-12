@@ -7,11 +7,11 @@
         <div class="page-head bg-grey-100 padding-top-15 no-padding-bottom">
             @include('flash::message')
             <h1 class="page-title no-line-height">Plans
-                @permission(['manage-gymie','manage-plans','add-plan'])
+                @permission(['manage-gymware','manage-plans','add-plan'])
                 <a href="{{ action('PlansController@create') }}" class="page-head-btn btn-sm btn-primary active" role="button">Add New</a>
                 <small>Details of all gym plans</small>
             </h1>
-            @permission(['manage-gymie','pagehead-stats'])
+            @permission(['manage-gymware','pagehead-stats'])
             <h1 class="font-size-30 text-right color-blue-grey-600 animated fadeInDown total-count pull-right">
                 <span data-toggle="counter" data-start="0"
                       data-from="0" data-to="{{ $count }}"
@@ -81,7 +81,7 @@
                                                     </button>
                                                     <ul class="dropdown-menu" role="menu">
                                                         <li>
-                                                            @permission(['manage-gymie','manage-plans','edit-plan'])
+                                                            @permission(['manage-gymware','manage-plans','edit-plan'])
                                                             <a href="{{ action('PlansController@edit',['id' => $plan->id]) }}">
                                                                 Edit details
                                                             </a>
@@ -91,7 +91,7 @@
                                                             <?php
                                                             $dependency = ($plan->Subscriptions->isEmpty() ? "false" : "true");
                                                             ?>
-                                                            @permission(['manage-gymie','manage-plans','delete-plan'])
+                                                            @permission(['manage-gymware','manage-plans','delete-plan'])
                                                             <a href="#"
                                                                class="delete-record"
                                                                data-dependency="{{ $dependency }}"
@@ -115,13 +115,13 @@
                                 <!-- Pagination -->
                                 <div class="row">
                                     <div class="col-xs-6">
-                                        <div class="gymie_paging_info">
+                                        <div class="gymware_paging_info">
                                             Showing page {{ $plans->currentPage() }} of {{ $plans->lastPage() }}
                                         </div>
                                     </div>
 
                                     <div class="col-xs-6">
-                                        <div class="gymie_paging pull-right">
+                                        <div class="gymware_paging pull-right">
                                             {!! str_replace('/?', '?', $plans->appends(Input::Only('search'))->render()) !!}
                                         </div>
                                     </div>
@@ -140,7 +140,7 @@
 @section('footer_script_init')
     <script type="text/javascript">
         $(document).ready(function () {
-            gymie.deleterecord();
+            gymware.deleterecord();
         });
     </script>
 @stop 

@@ -8,7 +8,7 @@
     <meta content="" name="description"/>
     <meta content="" name="author"/>
 
-    <title>Gymie - Login</title>
+    <title>gymware - Login</title>
 
     <!-- BEGIN CORE FRAMEWORK -->
     <link href="{{ URL::asset('assets/plugins/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet"/>
@@ -85,7 +85,7 @@
 <!-- Login Validators -->
 <script src="{{ URL::asset('assets/js/login.js') }}" type="text/javascript"></script>
 
-<!-- gymie -->
-<script src="{{ URL::asset('assets/js/gymie.js') }}" type="text/javascript"></script>
+<!-- gymware -->
+<script src="{{ URL::asset('assets/js/gymware.js') }}" type="text/javascript"></script>
 </body>
 </html>

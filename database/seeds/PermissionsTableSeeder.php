@@ -15,8 +15,8 @@ class PermissionsTableSeeder extends Seeder
         // Create permissions
         $permissions = [
           [
-            'name' => 'manage-gymie',
-            'display_name' => 'Manage Gymie',
+            'name' => 'manage-gymware',
+            'display_name' => 'Manage gymware',
             'group_key' => 'Global',
           ],
           [

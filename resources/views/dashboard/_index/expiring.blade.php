@@ -28,7 +28,7 @@
                     <span class="table-sub-data">{{ Carbon::today()->addDays($daysLeft)->diffForHumans() }}</span>
                 </td>
 
-                @permission(['manage-gymie','manage-subscriptions','renew-subscription'])
+                @permission(['manage-gymware','manage-subscriptions','renew-subscription'])
                 <td>
                     <a class="btn btn-info btn-xs btn pull-right"
                        href="{{ action('SubscriptionsController@renew',['id' => $expiring->invoice_id]) }}">Renew</a>

@@ -8,11 +8,11 @@
         <div class="page-head bg-grey-100 padding-top-15 no-padding-bottom">
             @include('flash::message')
             <h1 class="page-title no-line-height">Subscriptions
-                @permission(['manage-gymie','manage-subscriptions','add-subscription'])
+                @permission(['manage-gymware','manage-subscriptions','add-subscription'])
                 <a href="{{ action('SubscriptionsController@create') }}" class="page-head-btn btn-sm btn-primary active" role="button">Add New</a>
                 <small>Details of all gym subscriptions</small>
             </h1>
-            @permission(['manage-gymie','pagehead-stats'])
+            @permission(['manage-gymware','pagehead-stats'])
             <h1 class="font-size-30 text-right color-blue-grey-600 animated fadeInDown total-count pull-right"><span data-toggle="counter" data-start="0"
                                                                                                                      data-from="0" data-to="{{ $count }}"
                                                                                                                      data-speed="600"
@@ -41,7 +41,7 @@
                                             {!! Form::label('subscription-daterangepicker','Date range') !!}
 
                                             <div id="subscription-daterangepicker"
-                                                 class="gymie-daterangepicker btn bg-grey-50 daterange-padding no-border color-grey-600 hidden-xs no-shadow">
+                                                 class="gymware-daterangepicker btn bg-grey-50 daterange-padding no-border color-grey-600 hidden-xs no-shadow">
                                                 <i class="ion-calendar margin-right-10"></i>
                                                 <span>{{$drp_placeholder}}</span>
                                                 <i class="ion-ios-arrow-down margin-left-5"></i>
@@ -137,20 +137,20 @@
                                                     </button>
                                                     <ul class="dropdown-menu" role="menu">
                                                         <li>
-                                                            @permission(['manage-gymie','manage-subscriptions','edit-subscription'])
+                                                            @permission(['manage-gymware','manage-subscriptions','edit-subscription'])
                                                             <a href="{{ action('SubscriptionsController@edit',['id' => $subscription->id]) }}">
                                                                 Edit details
                                                             </a>
                                                             @endpermission
                                                         </li>
-                                                        @permission(['manage-gymie','manage-subscriptions','change-subscription'])
+                                                        @permission(['manage-gymware','manage-subscriptions','change-subscription'])
                                                         <li>
                                                             <a href="{{ action('SubscriptionsController@change',['id' => $subscription->id]) }}">
                                                                 Upgrade/Downgrade
                                                             </a>
                                                         <li>
                                                             @endpermission
-                                                            @permission(['manage-gymie','manage-subscriptions','delete-subscription'])
+                                                            @permission(['manage-gymware','manage-subscriptions','delete-subscription'])
                                                             <a href="#" class="delete-record"
                                                                data-delete-url="{{ url('subscriptions/'.$subscription->id.'/delete') }}"
                                                                data-record-id="{{$subscription->id}}">
@@ -173,14 +173,14 @@
 
                                 <div class="row">
                                     <div class="col-xs-6">
-                                        <div class="gymie_paging_info">
+                                        <div class="gymware_paging_info">
                                             <!-- TO DO -->
                                             Showing page {{ $subscriptions->currentPage() }} of {{ $subscriptions->lastPage() }}
                                         </div>
                                     </div>
 
                                     <div class="col-xs-6">
-                                        <div class="gymie_paging pull-right">
+                                        <div class="gymware_paging pull-right">
 
                                             {!! str_replace('/?', '?', $subscriptions->appends(Input::all())->render()) !!}
                                         </div>
@@ -199,7 +199,7 @@
 @section('footer_script_init')
     <script type="text/javascript">
         $(document).ready(function () {
-            gymie.deleterecord();
+            gymware.deleterecord();
         });
     </script>
 @stop

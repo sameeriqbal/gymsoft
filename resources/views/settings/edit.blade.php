@@ -258,7 +258,7 @@
 {{--                                            </div>--}}
 {{--                                        </div>--}}
 {{--                                    </div>--}}
-{{--                                    @role('Gymie')--}}
+{{--                                    @role('gymware')--}}
 {{--                                    <div class="row">--}}
 {{--                                        <div class="col-sm-6">--}}
 {{--                                            <div class="form-group">--}}
@@ -298,6 +298,6 @@
 
 @section('footer_script_init')
     <script type="text/javascript">
-        gymie.loadBsTokenInput();
+        gymware.loadBsTokenInput();
     </script>
 @stop

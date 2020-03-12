@@ -127,7 +127,7 @@
 @section('footer_script_init')
     <script type="text/javascript">
         $(document).ready(function () {
-            gymie.applyDiscount();
+            gymware.applyDiscount();
         });
     </script>
 @stop

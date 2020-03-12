@@ -74,7 +74,7 @@
 @section('footer_script_init')
     <script type="text/javascript">
         $(document).ready(function () {
-            gymie.loaddatepickerend();
+            gymware.loaddatepickerend();
         });
     </script>
 @stop

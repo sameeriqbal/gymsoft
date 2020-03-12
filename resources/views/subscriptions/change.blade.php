@@ -253,10 +253,10 @@
 @section('footer_script_init')
     <script type="text/javascript">
         $(document).ready(function () {
-            gymie.loaddatepickerstart();
-            gymie.chequedetails();
-            gymie.subscription();
-            gymie.subscriptionChange();
+            gymware.loaddatepickerstart();
+            gymware.chequedetails();
+            gymware.subscription();
+            gymware.subscriptionChange();
         });
     </script>
 @stop

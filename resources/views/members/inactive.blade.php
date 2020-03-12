@@ -10,7 +10,7 @@
             <h1 class="page-title no-line-height">Inactive Members
                 <small>Details of all inactive gym members</small>
             </h1>
-            @permission(['manage-gymie','pagehead-stats'])
+            @permission(['manage-gymware','pagehead-stats'])
             <h1 class="font-size-30 text-right color-blue-grey-600 animated fadeInDown total-count pull-right"><span data-toggle="counter" data-start="0"
                                                                                                                      data-from="0" data-to="{{ $count }}"
                                                                                                                      data-speed="600"
@@ -36,7 +36,7 @@
                                             {!! Form::label('member-daterangepicker','Date range') !!}
 
                                             <div id="member-daterangepicker"
-                                                 class="gymie-daterangepicker btn bg-grey-50 daterange-padding no-border color-grey-600 hidden-xs no-shadow">
+                                                 class="gymware-daterangepicker btn bg-grey-50 daterange-padding no-border color-grey-600 hidden-xs no-shadow">
                                                 <i class="ion-calendar margin-right-10"></i>
                                                 <span>{{$drp_placeholder}}</span>
                                                 <i class="ion-ios-arrow-down margin-left-5"></i>
@@ -123,17 +123,17 @@
                                                     </button>
                                                     <ul class="dropdown-menu" role="menu">
                                                         <li>
-                                                            @permission(['manage-gymie','manage-members','view-member'])
+                                                            @permission(['manage-gymware','manage-members','view-member'])
                                                             <a href="{{ action('MembersController@show',['id' => $member->id]) }}">View details</a>
                                                             @endpermission
                                                         </li>
                                                         <li>
-                                                            @permission(['manage-gymie','manage-members','edit-member'])
+                                                            @permission(['manage-gymware','manage-members','edit-member'])
                                                             <a href="{{ action('MembersController@edit',['id' => $member->id]) }}">Edit details</a>
                                                             @endpermission
                                                         </li>
                                                         <li>
-                                                            @permission(['manage-gymie','manage-members','delete-member'])
+                                                            @permission(['manage-gymware','manage-members','delete-member'])
                                                             <a href="#" class="delete-record" data-delete-url="{{ url('members/'.$member->id.'/archive') }}"
                                                                data-record-id="{{$member->id}}">Delete member</a>
                                                             @endpermission
@@ -148,12 +148,12 @@
 
                                 <div class="row">
                                     <div class="col-xs-6">
-                                        <div class="gymie_paging_info">
+                                        <div class="gymware_paging_info">
                                             Showing page {{ $members->currentPage() }} of {{ $members->lastPage() }}
                                         </div>
                                     </div>
                                     <div class="col-xs-6">
-                                        <div class="gymie_paging pull-right">
+                                        <div class="gymware_paging pull-right">
                                             {!! str_replace('/?', '?', $members->appends(Input::all())->render()) !!}
                                         </div>
                                     </div>
@@ -173,7 +173,7 @@
 @section('footer_script_init')
     <script type="text/javascript">
         $(document).ready(function () {
-            gymie.deleterecord();
+            gymware.deleterecord();
         });
     </script>
 @stop

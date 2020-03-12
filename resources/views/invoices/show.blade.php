@@ -111,12 +111,12 @@
                         <!-- Footer buttons -->
                         <div class="panel-footer bg-white no-padding-top padding-bottom-20 hidden-print">
                             @if($invoice->pending_amount != 0)
-                                @permission(['manage-gymie','manage-payments','add-payment'])
+                                @permission(['manage-gymware','manage-payments','add-payment'])
                                 <a class="btn btn-success pull-right" href="{{ action('InvoicesController@createPayment',['id' => $invoice->id]) }}"><i
                                             class="ion-card margin-right-5"></i> Accept Payment</a>
                                 @endpermission
                             @endif
-                            @permission(['manage-gymie','manage-invoices','print-invoice'])
+                            @permission(['manage-gymware','manage-invoices','print-invoice'])
                             <button class="btn btn-primary pull-right margin-right-10" onclick="window.print();"><i class="ion-printer margin-right-5"></i>
                                 Print
                             </button>

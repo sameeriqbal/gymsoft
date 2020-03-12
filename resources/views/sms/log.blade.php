@@ -59,13 +59,13 @@
                                 <!-- Pagination -->
                                 <div class="row">
                                     <div class="col-xs-6">
-                                        <div class="gymie_paging_info">
+                                        <div class="gymware_paging_info">
                                             Showing page {{ $smslogs->currentPage() }} of {{ $smslogs->lastPage() }}
                                         </div>
                                     </div>
 
                                     <div class="col-xs-6">
-                                        <div class="gymie_paging pull-right">
+                                        <div class="gymware_paging pull-right">
                                             {!! str_replace('/?', '?', $smslogs->appends(Input::Only('search'))->render()) !!}
                                         </div>
                                     </div>

@@ -77,7 +77,7 @@ class SubscriptionsController extends Controller
         // For Tax calculation
         JavaScript::put([
           'taxes' => \Utilities::getSetting('taxes'),
-          'gymieToday' => Carbon::today()->format('Y-m-d'),
+          'gymwareToday' => Carbon::today()->format('Y-m-d'),
           'servicesCount' => Service::count(),
       ]);
         list($invoice_number_mode, $invoiceCounter, $invoice_number) = $this->generateInvoiceNumber();
@@ -263,13 +263,13 @@ class SubscriptionsController extends Controller
         // $carbonToday = Carbon::today()->format('Y-m-d');
         // $subscriptionEndDate = $subscription->end_date->format('Y-m-d');
         $diff = Carbon::today()->diffInDays($subscription->end_date);
-        //$gymieDiff = $diff->format('Y-m-d');
-        $gymieDiff = $subscription->end_date->addDays($diff);
+        //$gymwareDiff = $diff->format('Y-m-d');
+        $gymwareDiff = $subscription->end_date->addDays($diff);
 
         JavaScript::put([
-          'gymieToday' => Carbon::today()->format('Y-m-d'),
-          'gymieEndDate' => $subscription->end_date->format('Y-m-d'),
-          'gymieDiff' => $gymieDiff->format('Y-m-d'),
+          'gymwareToday' => Carbon::today()->format('Y-m-d'),
+          'gymwareEndDate' => $subscription->end_date->format('Y-m-d'),
+          'gymwareDiff' => $gymwareDiff->format('Y-m-d'),
       ]);
 
         return view('subscriptions.edit', compact('subscription'));
@@ -299,7 +299,7 @@ class SubscriptionsController extends Controller
         // Javascript Variables
         JavaScript::put([
             'taxes' => \Utilities::getSetting('taxes'),
-            'gymieToday' => Carbon::today()->format('Y-m-d'),
+            'gymwareToday' => Carbon::today()->format('Y-m-d'),
             'servicesCount' => Service::count(),
             'currentServices' => $subscriptions->count(),
         ]);
@@ -371,7 +371,7 @@ class SubscriptionsController extends Controller
 
         JavaScript::put([
           'taxes' => \Utilities::getSetting('taxes'),
-          'gymieToday' => Carbon::today()->format('Y-m-d'),
+          'gymwareToday' => Carbon::today()->format('Y-m-d'),
           'servicesCount' => Service::count(),
       ]);
 

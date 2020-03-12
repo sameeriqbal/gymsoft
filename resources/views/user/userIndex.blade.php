@@ -83,7 +83,7 @@
 @section('footer_script_init')
     <script type="text/javascript">
         $(document).ready(function () {
-            gymie.deleterecord();
+            gymware.deleterecord();
         });
     </script>
 @stop

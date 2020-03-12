@@ -8,7 +8,7 @@
             <h1 class="page-title">Events
                 <small>Details of all sms events</small>
             </h1>
-            @permission(['manage-gymie','manage-sms','add-sms'])
+            @permission(['manage-gymware','manage-sms','add-sms'])
             <a href="{{ action('SmsController@createEvent') }}" class="btn btn-primary active pull-right" role="button"><i class="ion-compose"></i> Add</a></h1>
             @endpermission
         </div>
@@ -67,14 +67,14 @@
                                                     </button>
                                                     <ul class="dropdown-menu" role="menu">
                                                         <li>
-                                                            @permission(['manage-gymie','manage-events','edit-event'])
+                                                            @permission(['manage-gymware','manage-events','edit-event'])
                                                             <a href="{{ action('SmsController@editEvent',['id' => $event->id]) }}">
                                                                 Edit details
                                                             </a>
                                                             @endpermission
                                                         </li>
                                                         <li>
-                                                            @permission(['manage-gymie','manage-events','delete-event'])
+                                                            @permission(['manage-gymware','manage-events','delete-event'])
                                                             <a data-toggle="modal" data-target="#deleteModal-{{$event->id}}" data-id="{{$event->id}}">
                                                                 Delete event
                                                             </a>
@@ -116,13 +116,13 @@
                                 <!-- Pagination -->
                                 <div class="row">
                                     <div class="col-xs-6">
-                                        <div class="gymie_paging_info">
+                                        <div class="gymware_paging_info">
                                             Showing page {{ $events->currentPage() }} of {{ $events->lastPage() }}
                                         </div>
                                     </div>
 
                                     <div class="col-xs-6">
-                                        <div class="gymie_paging pull-right">
+                                        <div class="gymware_paging pull-right">
                                             {!! str_replace('/?', '?', $events->appends(Input::Only('search'))->render()) !!}
                                         </div>
                                     </div>

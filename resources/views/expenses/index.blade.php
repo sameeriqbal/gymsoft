@@ -7,11 +7,11 @@
         <div class="page-head bg-grey-100 padding-top-15 no-padding-bottom">
             @include('flash::message')
             <h1 class="page-title no-line-height">Expenses
-                @permission(['manage-gymie','manage-expenses','add-expense'])
+                @permission(['manage-gymware','manage-expenses','add-expense'])
                 <a href="{{ action('ExpensesController@create') }}" class="page-head-btn btn-sm btn-primary active" role="button">Add New</a>
                 <small>Details of all gym expenses</small>
             </h1>
-            @permission(['manage-gymie','pagehead-stats'])
+            @permission(['manage-gymware','pagehead-stats'])
             <h1 class="font-size-30 text-right color-blue-grey-600 animated fadeInDown total-count pull-right"><span data-toggle="counter" data-start="0"
                                                                                                                      data-from="0" data-to="{{ $count }}"
                                                                                                                      data-speed="600"
@@ -38,7 +38,7 @@
                                         {!! Form::label('expense-daterangepicker','Date range') !!}
 
                                         <div id="expense-daterangepicker"
-                                             class="gymie-daterangepicker btn bg-grey-50 daterange-padding no-border color-grey-600 hidden-xs no-shadow">
+                                             class="gymware-daterangepicker btn bg-grey-50 daterange-padding no-border color-grey-600 hidden-xs no-shadow">
                                             <i class="ion-calendar margin-right-10"></i>
                                             <span>{{$drp_placeholder}}</span>
                                             <i class="ion-ios-arrow-down margin-left-5"></i>
@@ -121,7 +121,7 @@
                                                         class="{{ Utilities::getPaidUnpaid ($expense->paid) }}">{{ Utilities::getInvoiceStatus ($expense->paid) }}
                                             </td>
                                             <td class="text-center">
-                                                @permission(['manage-gymie','manage-expenses','edit-expense'])
+                                                @permission(['manage-gymware','manage-expenses','edit-expense'])
                                                 <div class="btn-group">
                                                     <button type="button" class="btn btn-info">Actions</button>
                                                     <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
@@ -136,14 +136,14 @@
                                                                 </a>
                                                             @endif
                                                         </li>
-                                                        @permission(['manage-gymie','manage-expenses','edit-expense'])
+                                                        @permission(['manage-gymware','manage-expenses','edit-expense'])
                                                         <li>
                                                             <a href="{{ action('ExpensesController@edit',['id' => $expense->id]) }}">
                                                                 Edit details
                                                             </a>
                                                         </li>
                                                         @endpermission
-                                                        @permission(['manage-gymie','manage-expenses','delete-expense'])
+                                                        @permission(['manage-gymware','manage-expenses','delete-expense'])
                                                         <li>
                                                             <a href="#" class="delete-record" data-delete-url="{{ url('expenses/'.$expense->id.'/delete') }}"
                                                                data-record-id="{{$expense->id}}">
@@ -162,13 +162,13 @@
 
                                 <div class="row">
                                     <div class="col-xs-6">
-                                        <div class="gymie_paging_info">
+                                        <div class="gymware_paging_info">
                                             Showing page {{ $expenses->currentPage() }} of {{ $expenses->lastPage() }}
                                         </div>
                                     </div>
 
                                     <div class="col-xs-6">
-                                        <div class="gymie_paging pull-right">
+                                        <div class="gymware_paging pull-right">
                                             {!! str_replace('/?', '?', $expenses->appends(Input::Only('search'))->render()) !!}
                                         </div>
                                     </div>
@@ -187,7 +187,7 @@
 @section('footer_script_init')
     <script type="text/javascript">
         $(document).ready(function () {
-            gymie.deleterecord();
+            gymware.deleterecord();
         });
     </script>
 @stop 

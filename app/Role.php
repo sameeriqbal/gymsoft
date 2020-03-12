@@ -30,7 +30,7 @@ class Role extends EntrustRole
         return $this->belongsToMany('App\RoleUser');
     }
 
-    public function scopeExcludeGymie($query)
+    public function scopeExcludegymware($query)
     {
         if (Auth::User()->id != 1) {
             return $query->where('id', '!=', 1);

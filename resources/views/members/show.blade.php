@@ -15,13 +15,13 @@
                         <div class="panel-title">
                             <div class="panel-head font-size-20">Member Detail</div>
                             <div class="pull-right no-margin">
-                                @permission(['manage-gymie','manage-members','edit-member'])
+                                @permission(['manage-gymware','manage-members','edit-member'])
                                 <a class="btn btn-primary" href="{{ action('MembersController@edit',['id' => $member->id]) }}">
                                     <span>Edit</span>
                                 </a>
                                 @endpermission
 
-                                @permission(['manage-gymie','manage-members','delete-member'])
+                                @permission(['manage-gymware','manage-members','delete-member'])
                                 <button class="btn btn-danger" data-toggle="modal" data-target="#deleteModal-{{$member->id}}" data-id="{{$member->id}}">
                                     <span>Delete</span>
                                 </button>

@@ -87,28 +87,28 @@
                     </a>
                 </li>
 
-                @permission(['manage-gymie','manage-enquiries','view-enquiry'])
+                @permission(['manage-gymware','manage-enquiries','view-enquiry'])
                 <li class="nav-dropdown {{ Utilities::setActiveMenu('enquiries*',true) }}">
                     <a href="#">
                         <i class="ion-ios-telephone"></i> <span>Enquiries</span>
                     </a>
                     <ul>
                         <li class="{{ Utilities::setActiveMenu('enquiries/all') }}"><a href="{{ action('EnquiriesController@index') }}">All Enquiries</a></li>
-                        @permission(['manage-gymie','manage-enquiries','add-enquiry'])
+                        @permission(['manage-gymware','manage-enquiries','add-enquiry'])
                         <li class="{{ Utilities::setActiveMenu('enquiries/create') }}"><a href="{{ action('EnquiriesController@create') }}">Add Enquiry</a></li>
                         @endpermission
                     </ul>
                 </li>
                 @endpermission
 
-                @permission(['manage-gymie','manage-members','view-member'])
+                @permission(['manage-gymware','manage-members','view-member'])
                 <li class="nav-dropdown {{ Utilities::setActiveMenu('members*',true) }}">
                     <a href="#">
                         <i class="ion-person-add"></i> <span>Members</span>
                     </a>
                     <ul>
                         <li class="{{ Utilities::setActiveMenu('members/all') }}"><a href="{{ action('MembersController@index') }}">All Members</a></li>
-                        @permission(['manage-gymie','manage-members','add-member'])
+                        @permission(['manage-gymware','manage-members','add-member'])
                         <li class="{{ Utilities::setActiveMenu('members/create') }}"><a href="{{ action('MembersController@create') }}">Add Member</a></li>
                         @endpermission
                         <li class="{{ Utilities::setActiveMenu('members/active') }}"><a href="{{ action('MembersController@active') }}">Active Members</a></li>
@@ -118,21 +118,21 @@
                 </li>
                 @endpermission
 
-                @permission(['manage-gymie','manage-payments','view-payment'])
+                @permission(['manage-gymware','manage-payments','view-payment'])
                 <li class="nav-dropdown {{ Utilities::setActiveMenu('payments*',true) }}">
                     <a href="#">
                         <i class="ion-cash"></i> <span>Payments</span>
                     </a>
                     <ul>
                         <li class="{{ Utilities::setActiveMenu('payments/all') }}"><a href="{{ action('PaymentsController@index') }}">All Payments</a></li>
-                        @permission(['manage-gymie','manage-payments','add-payment'])
+                        @permission(['manage-gymware','manage-payments','add-payment'])
                         <li class="{{ Utilities::setActiveMenu('payments/create') }}"><a href="{{ action('PaymentsController@create') }}">Add Payment</a></li>
                         @endpermission
                     </ul>
                 </li>
                 @endpermission
 
-                @permission(['manage-gymie','manage-subscriptions','view-subscription'])
+                @permission(['manage-gymware','manage-subscriptions','view-subscription'])
                 <li class="nav-dropdown {{ Utilities::setActiveMenu('subscriptions*',true) }}">
                     <a href="#">
                         <i class="ion-android-checkbox-outline"></i> <span>Subscriptions</span>
@@ -140,7 +140,7 @@
                     <ul>
                         <li class="{{ Utilities::setActiveMenu('subscriptions/all') }}"><a href="{{ action('SubscriptionsController@index') }}">All
                                 Subscriptions</a></li>
-                        @permission(['manage-gymie','manage-subscriptions','add-subscription'])
+                        @permission(['manage-gymware','manage-subscriptions','add-subscription'])
                         <li class="{{ Utilities::setActiveMenu('subscriptions/create') }}"><a href="{{ action('SubscriptionsController@create') }}">Add
                                 Subscription</a></li>
                         @endpermission
@@ -166,7 +166,7 @@
 {{--                            </ul>--}}
 {{--                        </li>--}}
 
-{{--                @permission(['manage-gymie','manage-sms'])--}}
+{{--                @permission(['manage-gymware','manage-sms'])--}}
 {{--                <li class="nav-dropdown {{ Utilities::setActiveMenu('sms*',true) }}">--}}
 {{--                    <a href="#">--}}
 {{--                        <i class="ion-ios-paper"></i> <span>SMS</span>--}}
@@ -180,7 +180,7 @@
 {{--                </li>--}}
 {{--                @endpermission--}}
 
-                @permission(['manage-gymie','manage-invoices','view-invoice'])
+                @permission(['manage-gymware','manage-invoices','view-invoice'])
                 <li class="nav-dropdown {{ Utilities::setActiveMenu('invoices*',true) }}">
                     <a href="#">
                         <i class="ion-ios-paper"></i> <span>Invoices</span>
@@ -198,21 +198,21 @@
                 </li>
                 @endpermission
 
-                @permission(['manage-gymie','manage-expenses','view-expense'])
+                @permission(['manage-gymware','manage-expenses','view-expense'])
                 <li class="nav-dropdown {{ Utilities::setActiveMenu('expenses*',true) }}">
                     <a href="#">
                         <i class="">₨</i> <span>Expenses</span>
                     </a>
                     <ul>
                         <li class="{{ Utilities::setActiveMenu('expenses/all') }}"><a href="{{ action('ExpensesController@index') }}">All Expenses</a></li>
-                        @permission(['manage-gymie','manage-expenses','add-expense'])
+                        @permission(['manage-gymware','manage-expenses','add-expense'])
                         <li class="{{ Utilities::setActiveMenu('expenses/create') }}"><a href="{{ action('ExpensesController@create') }}">Add Expense</a></li>
                         @endpermission
-                        @permission(['manage-gymie','manage-expenseCategories','view-expenseCategory'])
+                        @permission(['manage-gymware','manage-expenseCategories','view-expenseCategory'])
                         <li class="{{ Utilities::setActiveMenu('expenses/categories/all') }}"><a href="{{ action('ExpenseCategoriesController@index') }}">Expense
                                 Categories</a></li>
                         @endpermission
-                        @permission(['manage-gymie','manage-expenseCategories','add-expenseCategory'])
+                        @permission(['manage-gymware','manage-expenseCategories','add-expenseCategory'])
                         <li class="{{ Utilities::setActiveMenu('expenses/categories/create') }}"><a href="{{ action('ExpenseCategoriesController@create') }}">Add
                                 Category</a></li>
                         @endpermission
@@ -220,21 +220,21 @@
                 </li>
                 @endpermission
 
-                @permission(['manage-gymie','manage-plans','view-plan'])
+                @permission(['manage-gymware','manage-plans','view-plan'])
                 <li class="nav-dropdown {{ Utilities::setActiveMenu('plans*',true) }}">
                     <a href="#">
                         <i class="ion-compose"></i> <span>Plans</span>
                     </a>
                     <ul>
                         <li class="{{ Utilities::setActiveMenu('plans/all') }}"><a href="{{ action('PlansController@index') }}">All Plans</a></li>
-                        @permission(['manage-gymie','manage-plans','add-plan'])
+                        @permission(['manage-gymware','manage-plans','add-plan'])
                         <li class="{{ Utilities::setActiveMenu('plans/create') }}"><a href="{{ action('PlansController@create') }}">Add Plan</a></li>
                         @endpermission
-                        @permission(['manage-gymie','manage-services','view-service'])
+                        @permission(['manage-gymware','manage-services','view-service'])
                         <li class="{{ Utilities::setActiveMenu('plans/services/all') }}"><a href="{{ action('ServicesController@index') }}">Gym Services</a>
                         </li>
                         @endpermission
-                        @permission(['manage-gymie','manage-services','add-service'])
+                        @permission(['manage-gymware','manage-services','add-service'])
                         <li class="{{ Utilities::setActiveMenu('plans/services/create') }}"><a href="{{ action('ServicesController@create') }}">Add Service</a>
                         </li>
                         @endpermission
@@ -242,7 +242,7 @@
                 </li>
                 @endpermission
 
-                @permission(['manage-gymie','manage-users'])
+                @permission(['manage-gymware','manage-users'])
                 <li class="nav-dropdown {{ Utilities::setActiveMenu('user*',true) }}">
                     <a href="#">
                         <i class="fa fa-users"></i> <span>Users</span>
@@ -254,7 +254,7 @@
                                 Add new user</a></li>
                         <li class="{{ Utilities::setActiveMenu('user/role') }}"><a href="{{ action('AclController@roleIndex') }}"><i class="fa fa-list"></i>
                                 Roles</a></li>
-                        @role('Gymie')
+                        @role('gymware')
                         <li class="{{ Utilities::setActiveMenu('user/permission') }}"><a href="{{ action('AclController@permissionIndex') }}"><i
                                         class="fa fa-list"></i> Permissions</a></li>
                         @endrole
@@ -262,7 +262,7 @@
                 </li>
                 @endpermission
 
-                @permission(['manage-gymie','manage-settings'])
+                @permission(['manage-gymware','manage-settings'])
                 <li class="{{ Utilities::setActiveMenu('settings*') }}">
                     <a href="{{ action('SettingsController@edit') }}">
                         <i class="fa fa-cogs fa-2x"></i> <span>Settings</span>
@@ -319,8 +319,8 @@
 <!--Footer scripts-->
 @yield('footer_scripts')
 
-<!-- gymie -->
-<script src="{{ URL::asset('assets/js/gymie.js') }}" type="text/javascript"></script>
+<!-- gymware -->
+<script src="{{ URL::asset('assets/js/gymware.js') }}" type="text/javascript"></script>
 
 @yield('footer_script_init')
 
@@ -328,11 +328,11 @@
 <script type="text/javascript">
 
     $(document).ready(function () {
-        gymie.loadcounter();
-        gymie.loadprogress();
-        gymie.loaddatepicker();
-        gymie.loaddaterangepicker();
-        gymie.loadbsselect();
+        gymware.loadcounter();
+        gymware.loadprogress();
+        gymware.loaddatepicker();
+        gymware.loaddaterangepicker();
+        gymware.loadbsselect();
     });
 
 </script>

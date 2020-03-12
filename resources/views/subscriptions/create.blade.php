@@ -67,9 +67,9 @@
 @section('footer_script_init')
     <script type="text/javascript">
         $(document).ready(function () {
-            gymie.loaddatepickerstart();
-            gymie.chequedetails();
-            gymie.subscription();
+            gymware.loaddatepickerstart();
+            gymware.chequedetails();
+            gymware.subscription();
         });
     </script>
 @stop

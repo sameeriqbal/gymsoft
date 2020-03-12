@@ -125,7 +125,7 @@ class AclController extends Controller
      */
     public function roleIndex()
     {
-        $roles = Role::excludeGymie()->get();
+        $roles = Role::excludegymware()->get();
 
         return view('user.roleIndex', compact('roles'));
     }
